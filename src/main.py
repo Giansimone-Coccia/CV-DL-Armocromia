@@ -6,14 +6,8 @@ import matplotlib.image as mpimg
 from PIL import Image
 import shutil
 
-# Nome del file di cui vuoi ottenere il percorso della directory
-nome_file = "Project.py"
-
 # Ottieni il percorso completo del file
-percorso_completo = os.path.abspath(nome_file)
-
-# Ottieni il percorso della directory che contiene il file
-project_dir = os.path.dirname(os.path.dirname(percorso_completo))
+project_dir = os.getcwd()
 
 # Percorso del modello
 model_path = os.path.join(project_dir, 'data/models/yolov8l-face.pt')
