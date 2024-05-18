@@ -1,4 +1,7 @@
 import os
+from tkinter import Image
+import numpy as np
+from sklearn.cluster import KMeans
 import torch
 from torchvision.transforms.functional import to_pil_image
 import facer
@@ -11,6 +14,7 @@ class Segmentation:
         self._face_parser = facer.face_parser('farl/lapa/448', device=self._device)
 
     def process_images(self):
+        faces = None
         for filename in os.listdir(os.path.join(self._project_dir, 'results/faces')):
             image = facer.hwc2bchw(facer.read_hwc(f'results/faces/{filename}')).to(device=self._device)
             with torch.inference_mode():
@@ -34,3 +38,31 @@ class Segmentation:
                 os.makedirs(directory)
 
             vis_img_pil.save(os.path.join(directory,f'result_{filename.split("_")[1]}_{filename.split("_")[2]}'))
+        return faces
+        
+    def extract_dominant_colors(self, faces, filename='faces.jpg'):
+        dominant_colors = {}
+
+        # Carica l'immagine
+        image_path = os.path.join(self._project_dir, 'results/faces', filename)
+        image = Image.open(image_path)
+        image_tensor = facer.hwc2bchw(facer.read_hwc(image)).to(device=self._device)
+
+        for part_segmented in faces['seg']['parts']:
+            seg_probs_part = faces['seg']['parts'][part_segmented].softmax(dim=1)
+            seg_mask_part = seg_probs_part.argmax(dim=0)
+            pixel_coords = torch.nonzero(seg_mask_part).cpu().numpy()
+
+            segmented_colors = []
+            for coord in pixel_coords:
+                color = image_tensor[:, coord[0], coord[1]].cpu().numpy()
+                segmented_colors.append(color)
+
+            segmented_colors = np.array(segmented_colors)
+
+            kmeans = KMeans(n_clusters=1).fit(segmented_colors)
+            dominant_color = kmeans.cluster_centers[0]
+
+            dominant_colors[part_segmented] = dominant_color
+
+        return dominant_colors
