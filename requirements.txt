@@ -1,0 +1,4 @@
+ultralytics
+pyfacer
+timm
+#pip install -r /percorso/verso/il/tuo/file/requirements.txt
