@@ -6,13 +6,13 @@ from ultralytics import YOLO
 
 class FaceDetection:
     def __init__(self, model_path='data/models/yolov8l-face.pt'):
-        self.model_path = model_path
+        self._model_path = model_path
         assert os.path.exists(model_path), "Il percorso del modello non è valido"
-        self.model = YOLO(model_path)
+        self._model = YOLO(model_path)
 
     def face_detection(self, image_path, output_dir='results/faces'):
         # Esegui l'inferenza sull'immagine con YOLOv8
-        results = self.model(image_path)
+        results = self._model(image_path)
 
         # Itera attraverso tutte le bounding box individuate
         for i, result in enumerate(results):

@@ -5,19 +5,19 @@ import facer
 
 class Segmentation:
     def __init__(self):
-        self.project_dir = os.getcwd()
-        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        self.face_detector = facer.face_detector('retinaface/mobilenet', device=self.device)
-        self.face_parser = facer.face_parser('farl/lapa/448', device=self.device)
+        self._project_dir = os.getcwd()
+        self._device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        self._face_detector = facer.face_detector('retinaface/mobilenet', device=self._device)
+        self._face_parser = facer.face_parser('farl/lapa/448', device=self._device)
 
     def process_images(self):
-        for filename in os.listdir(os.path.join(self.project_dir, 'results/faces')):
-            image = facer.hwc2bchw(facer.read_hwc(f'results/faces/{filename}')).to(device=self.device)
+        for filename in os.listdir(os.path.join(self._project_dir, 'results/faces')):
+            image = facer.hwc2bchw(facer.read_hwc(f'results/faces/{filename}')).to(device=self._device)
             with torch.inference_mode():
-                faces = self.face_detector(image)
+                faces = self._face_detector(image)
             
             with torch.inference_mode():
-                faces = self.face_parser(image, faces)
+                faces = self._face_parser(image, faces)
 
             seg_logits = faces['seg']['logits']
             seg_probs = seg_logits.softmax(dim=1)  # nfaces x nclasses x h x w
