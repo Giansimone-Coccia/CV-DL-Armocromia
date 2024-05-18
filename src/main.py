@@ -7,28 +7,28 @@ from PIL import Image
 import shutil
 
 # Nome del file di cui vuoi ottenere il percorso della directory
-nome_file = "Project.ipynb"
+nome_file = "src/main.py"
 
 # Ottieni il percorso completo del file
 percorso_completo = os.path.abspath(nome_file)
 
 # Ottieni il percorso della directory che contiene il file
-project_dir = os.path.dirname(percorso_completo)
+project_dir = os.path.dirname(os.path.dirname(percorso_completo))
 
 # Percorso del modello
-model_path = os.path.join(project_dir, 'yolov8l-face.pt')
+model_path = os.path.join(project_dir, 'data/models/yolov8l-face.pt')
 
 # Assicurati che il percorso del modello sia corretto
 assert os.path.exists(model_path), f"Il percorso del modello non è valido"
 # Run inference on an image with YOLOv8
 model = YOLO(model_path)
-results = model(os.path.join(project_dir, 'Faces.jpg'))
+results = model(os.path.join(project_dir, 'data/images/Faces.jpg'))
 
 for i, result in enumerate(results):
     boxes = result.boxes.data  # Boxes object for bounding box outputs
 
-    result.save(filename='result.jpg')
-    img = mpimg.imread('result.jpg')
+    result.save(filename='results/result.jpg')
+    img = mpimg.imread('results/result.jpg')
     plt.imshow(img)
     # Itera attraverso tutte le bounding box individuate
     for j, box in enumerate(boxes):
@@ -36,11 +36,11 @@ for i, result in enumerate(results):
         x_min, y_min, x_max, y_max, conf, cls = box.tolist()[:6]
 
         # Ritaglia l'area corrispondente dall'immagine originale
-        img = Image.open(os.path.join(project_dir, 'Faces.jpg'))
+        img = Image.open(os.path.join(project_dir, 'data/images/Faces.jpg'))
         cropped_img = img.crop((x_min, y_min, x_max, y_max))
 
         # Salva l'immagine ritagliata
-        directory = "faces"
+        directory = "results/faces"
         # Controllo se la cartella esiste, altrimenti la creo
         if not os.path.exists(directory):
             os.makedirs(directory)
