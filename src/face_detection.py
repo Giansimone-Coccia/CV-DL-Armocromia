@@ -1,4 +1,5 @@
 import os
+import time
 from PIL import Image
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -25,9 +26,11 @@ class FaceDetection:
             os.makedirs(output_dir)
         print("Directory creata")
 
+        start_time = time.time()
+        timeout_seconds=50
+
         # Itera su ogni file di immagine nella cartella di input
         for image_file in image_files:
-            print(f"Immagine: {image_file}")
             # Percorso completo dell'immagine di input
             image_path = os.path.join(input_dir, image_file)
             
@@ -52,6 +55,10 @@ class FaceDetection:
 
                     # Salva l'immagine ritagliata
                     #output_file = f'result_{i}_{j}.jpg'
-                    output_file = f'result_{image_file}_box_{i}_{j}.jpg'
+                    image_file_no_extension = image_file.split('.')[0]
+                    output_file = f'result_{image_file_no_extension}_box_{i}_{j}.jpg'
                     cropped_img.save(os.path.join(output_dir, output_file))
+                if time.time() - start_time >= timeout_seconds:
+                    print("Timeout raggiunto. Uscita dal ciclo.")
+                    return
         print("Processo concluso con successo")

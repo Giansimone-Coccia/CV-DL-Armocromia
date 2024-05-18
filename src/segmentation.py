@@ -37,7 +37,7 @@ class Segmentation:
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
-            vis_img_pil.save(os.path.join(directory,f'result_{filename.split("_")[1]}_{filename.split("_")[2]}'))
+            vis_img_pil.save(os.path.join(directory,f'result_{filename.split("_")[1]}_{filename.split("_")[2]}.jpg'))
         return faces
         
     def extract_dominant_colors(self, faces, filename='faces.jpg'):
