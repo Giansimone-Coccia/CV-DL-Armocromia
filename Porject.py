@@ -7,7 +7,7 @@ from PIL import Image
 import shutil
 
 # Nome del file di cui vuoi ottenere il percorso della directory
-nome_file = "Project.ipynb"
+nome_file = "Project.py"
 
 # Ottieni il percorso completo del file
 percorso_completo = os.path.abspath(nome_file)
