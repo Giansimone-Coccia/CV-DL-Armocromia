@@ -51,6 +51,7 @@ class FaceDetection:
                     cropped_img = img.crop((x_min, y_min, x_max, y_max))
 
                     # Salva l'immagine ritagliata
-                    output_file = f'result_{i}_{j}.jpg'
+                    #output_file = f'result_{i}_{j}.jpg'
+                    output_file = f'result_{image_file}_box_{i}_{j}.jpg'
                     cropped_img.save(os.path.join(output_dir, output_file))
         print("Processo concluso con successo")
