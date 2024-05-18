@@ -4,6 +4,9 @@ from ultralytics import YOLO
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from PIL import Image
+import torch 
+import facer #pip install pyfacer      pip install timm
+from torchvision.transforms.functional import to_pil_image
 import shutil
 
 # Nome del file di cui vuoi ottenere il percorso della directory
@@ -46,3 +49,31 @@ for i, result in enumerate(results):
             os.makedirs(directory)
         #shutil.rmtree(directory)
         cropped_img.save(os.path.join(directory,f'result_{i}_{"0" * (len(str(len(boxes))) - len(str(j)))}{j}.jpg'))
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+face_detector = facer.face_detector('retinaface/mobilenet', device=device)
+face_parser = facer.face_parser('farl/lapa/448', device=device)
+
+for filename in os.listdir(os.path.join(project_dir, 'results/faces')):
+    image = facer.hwc2bchw(facer.read_hwc(f'results/faces/{filename}')).to(device=device)
+    with torch.inference_mode():
+        faces = face_detector(image)
+    
+    with torch.inference_mode():
+        faces = face_parser(image, faces)
+
+    seg_logits = faces['seg']['logits']
+    seg_probs = seg_logits.softmax(dim=1)  # nfaces x nclasses x h x w
+    n_classes = seg_probs.size(1)
+    vis_seg_probs = seg_probs.argmax(dim=1).float()/n_classes*255
+    vis_img = vis_seg_probs.sum(0, keepdim=True)
+
+     # Converti il tensor in un'immagine PIL
+    vis_img_pil = to_pil_image(vis_img.byte())
+
+    directory = "results/faces_facer"
+
+    if not os.path.exists(directory):
+            os.makedirs(directory)
+            
+    vis_img_pil.save(os.path.join(directory,f'result_{filename.split("_")[1]}_{filename.split("_")[2]}'))
