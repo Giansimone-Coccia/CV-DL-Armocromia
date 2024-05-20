@@ -40,28 +40,28 @@ class Segmentation:
             vis_img_pil.save(os.path.join(directory,f'result_{filename.split("_")[1]}_{filename.split("_")[2]}.jpg'))
         return faces
         
-    def extract_dominant_colors(self, faces, filename='Faces.jpg'):
+    def extract_dominant_colors(self, faces, filename='result_0_0.jpg'):
         dominant_colors = {}
 
         # Carica l'immagine
-        image_path = os.path.join(self._project_dir, 'data/images', filename)
+        image_path = os.path.join(self._project_dir, 'results/faces', filename)
         image_tensor = facer.hwc2bchw(facer.read_hwc(image_path)).to(device=self._device)
 
-        for part_segmented in faces['seg']['logits']:
-            seg_probs_part = faces['seg']['logits'][part_segmented].softmax(dim=1)
-            seg_mask_part = seg_probs_part.argmax(dim=0)
-            pixel_coords = torch.nonzero(seg_mask_part).cpu().numpy()
+        seg_logits = faces['seg']['logits']
+        for i, part_segmented in enumerate(seg_logits):  # Itera sui tensori di segmentazione per ogni parte del viso
+            seg_probs_part = seg_logits[i].softmax(dim=0)  # Applica softmax lungo la dimensione delle classi
+            seg_mask_part = seg_probs_part.argmax(dim=0)  # Ottieni la maschera segmentata per questa parte del viso
+            pixel_coords = torch.nonzero(seg_mask_part)  # Trova le coordinate dei pixel segmentati
 
             segmented_colors = []
             for coord in pixel_coords:
-                color = image_tensor[:, coord[0], coord[1]].cpu().numpy()
+                color = image_tensor[0, :, coord[0], coord[1]].cpu().numpy()  # Ottieni il colore del pixel dall'immagine originale
                 segmented_colors.append(color)
 
             segmented_colors = np.array(segmented_colors)
 
-            kmeans = KMeans(n_clusters=1).fit(segmented_colors)
-            dominant_color = kmeans.cluster_centers[0]
-
-            dominant_colors[part_segmented] = dominant_color
+            # Usa KMeans con 3 cluster per trovare i 3 colori dominanti
+            kmeans = KMeans(n_clusters=3).fit(segmented_colors)
+            dominant_colors[i] = kmeans.cluster_centers_
 
         return dominant_colors
