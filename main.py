@@ -6,4 +6,4 @@ fd = FaceDetection()
 fd.face_detection()
 
 sg= Segmentation()
-sg.extract_dominant_colors(sg.process_images())
+print(sg.extract_dominant_colors(sg.process_images()))

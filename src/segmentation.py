@@ -40,16 +40,15 @@ class Segmentation:
             vis_img_pil.save(os.path.join(directory,f'result_{filename.split("_")[1]}_{filename.split("_")[2]}'))
         return faces
         
-    def extract_dominant_colors(self, faces, filename='faces.jpg'):
+    def extract_dominant_colors(self, faces, filename='Faces.jpg'):
         dominant_colors = {}
 
         # Carica l'immagine
-        image_path = os.path.join(self._project_dir, 'results/faces', filename)
-        image = Image.open(image_path)
-        image_tensor = facer.hwc2bchw(facer.read_hwc(image)).to(device=self._device)
+        image_path = os.path.join(self._project_dir, 'data/images', filename)
+        image_tensor = facer.hwc2bchw(facer.read_hwc(image_path)).to(device=self._device)
 
-        for part_segmented in faces['seg']['parts']:
-            seg_probs_part = faces['seg']['parts'][part_segmented].softmax(dim=1)
+        for part_segmented in faces['seg']['logits']:
+            seg_probs_part = faces['seg']['logits'][part_segmented].softmax(dim=1)
             seg_mask_part = seg_probs_part.argmax(dim=0)
             pixel_coords = torch.nonzero(seg_mask_part).cpu().numpy()
 
