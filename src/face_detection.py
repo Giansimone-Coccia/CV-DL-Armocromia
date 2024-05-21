@@ -54,9 +54,9 @@ class FaceDetection:
                     cropped_img = img.crop((x_min, y_min, x_max, y_max))
 
                     # Salva l'immagine ritagliata
-                    #output_file = f'result_{i}_{j}.jpg'
+                    output_file = f'result_{i}_{j}.jpg'
                     image_file_no_extension = image_file.split('.')[0]
-                    output_file = f'result_{image_file_no_extension}_box_{i}_{j}.jpg'
+                    #output_file = f'result_{image_file_no_extension}_box_{i}_{j}.jpg'
                     cropped_img.save(os.path.join(output_dir, output_file))
                 if time.time() - start_time >= timeout_seconds:
                     print("Timeout raggiunto. Uscita dal ciclo.")
