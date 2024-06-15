@@ -1,6 +1,7 @@
 Learning rate = 0.001
 Num epoch = 10
 Batch_size = 32
+model.fc = nn.Linear(num_ftrs, num_classes)
 
 Epoch 1/10
 ----------

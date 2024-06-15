@@ -1,0 +1,55 @@
+Learning rate = 0.001
+Num epoch = 12
+Batch_size = 32
+model.fc = nn.Linear(num_ftrs, num_classes)
+
+Epoch 1/12
+----------
+train Loss: 2.4448, Acc: 0.1368
+test Loss: 2.4069, Acc: 0.1779
+Epoch 2/12
+----------
+train Loss: 2.3727, Acc: 0.2011
+test Loss: 2.3282, Acc: 0.2299
+Epoch 3/12
+----------
+train Loss: 2.3079, Acc: 0.2496
+test Loss: 2.2857, Acc: 0.2364
+Epoch 4/12
+----------
+train Loss: 2.2615, Acc: 0.2578
+test Loss: 2.2460, Acc: 0.2312
+Epoch 5/12
+----------
+train Loss: 2.2155, Acc: 0.2812
+test Loss: 2.2098, Acc: 0.2429
+Epoch 6/12
+----------
+train Loss: 2.1844, Acc: 0.2823
+test Loss: 2.1732, Acc: 0.2896
+Epoch 7/12
+----------
+train Loss: 2.1580, Acc: 0.3068
+test Loss: 2.1505, Acc: 0.2662
+Epoch 8/12
+----------
+train Loss: 2.1250, Acc: 0.3079
+test Loss: 2.1178, Acc: 0.3013
+Epoch 9/12
+----------
+train Loss: 2.0969, Acc: 0.3188
+test Loss: 2.0895, Acc: 0.3221
+Epoch 10/12
+----------
+train Loss: 2.0785, Acc: 0.3292
+test Loss: 2.0671, Acc: 0.2961
+Epoch 11/12
+----------
+train Loss: 2.0495, Acc: 0.3313
+test Loss: 2.0437, Acc: 0.3143
+Epoch 12/12
+----------
+train Loss: 2.0350, Acc: 0.3422
+test Loss: 2.0477, Acc: 0.3182
+
+Training complete
