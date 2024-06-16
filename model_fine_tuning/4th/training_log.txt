@@ -1,0 +1,15 @@
+Learning rate = 1.5
+Num epoch = 12
+Batch_size = 32
+model.fc = nn.Linear(num_ftrs, num_classes)
+
+Epoch 1/12
+----------
+train Loss: 2.4944, Acc: 0.0785
+test Loss: 2.4921, Acc: 0.0740
+Epoch 2/12
+----------
+train Loss: 2.5037, Acc: 0.0823
+test Loss: 2.4922, Acc: 0.0753
+Epoch 3/12
+----------
