@@ -1,0 +1,174 @@
+Epoch 1/25
+----------
+train Loss: 2.4294, Acc: 0.1760, F1: 0.1553
+Epoch 1/25
+----------
+train Loss: 2.2302, Acc: 0.2349, F1: 0.2125
+test Loss: 2.5939, Acc: 0.2377, F1: 0.1784
+Epoch 2/25
+----------
+train Loss: 2.0271, Acc: 0.2943, F1: 0.2724
+test Loss: 2.4252, Acc: 0.2805, F1: 0.2070
+Epoch 3/25
+----------
+train Loss: 1.9172, Acc: 0.3030, F1: 0.2955
+test Loss: 1.9589, Acc: 0.3221, F1: 0.2894
+Epoch 4/25
+----------
+train Loss: 1.8046, Acc: 0.3569, F1: 0.3418
+test Loss: 1.9180, Acc: 0.3312, F1: 0.2992
+Epoch 5/25
+----------
+train Loss: 1.6989, Acc: 0.3907, F1: 0.3778
+test Loss: 1.9764, Acc: 0.2961, F1: 0.2438
+Epoch 6/25
+----------
+train Loss: 1.6660, Acc: 0.4033, F1: 0.3886
+test Loss: 1.9802, Acc: 0.3481, F1: 0.3022
+Epoch 7/25
+----------
+train Loss: 1.5450, Acc: 0.4463, F1: 0.4374
+test Loss: 1.8950, Acc: 0.3714, F1: 0.3537
+Epoch 8/25
+----------
+train Loss: 1.3921, Acc: 0.5025, F1: 0.4922
+test Loss: 1.7573, Acc: 0.3597, F1: 0.3479
+Epoch 9/25
+----------
+train Loss: 1.3667, Acc: 0.5144, F1: 0.5050
+test Loss: 1.7410, Acc: 0.3792, F1: 0.3669
+Epoch 10/25
+----------
+train Loss: 1.3064, Acc: 0.5384, F1: 0.5316
+Epoch 1/25
+----------
+train Loss: 2.4151, Acc: 0.1804, F1: 0.1650
+test Loss: 2.1837, Acc: 0.2403, F1: 0.1504
+Epoch 2/25
+----------
+train Loss: 2.0152, Acc: 0.3068, F1: 0.2902
+test Loss: 1.9273, Acc: 0.3195, F1: 0.2986
+Epoch 3/25
+----------
+train Loss: 1.8609, Acc: 0.3597, F1: 0.3516
+test Loss: 1.8479, Acc: 0.3701, F1: 0.3497
+Epoch 4/25
+----------
+train Loss: 1.7603, Acc: 0.3956, F1: 0.3851
+test Loss: 2.0186, Acc: 0.3208, F1: 0.2897
+Epoch 5/25
+----------
+train Loss: 1.6610, Acc: 0.4343, F1: 0.4233
+test Loss: 2.1646, Acc: 0.3182, F1: 0.2979
+Epoch 6/25
+----------
+train Loss: 1.5981, Acc: 0.4322, F1: 0.4277
+test Loss: 1.8096, Acc: 0.3857, F1: 0.3656
+Epoch 7/25
+----------
+train Loss: 1.5497, Acc: 0.4376, F1: 0.4295
+test Loss: 1.7788, Acc: 0.3714, F1: 0.3671
+Epoch 8/25
+----------
+train Loss: 1.4158, Acc: 0.5014, F1: 0.4953
+test Loss: 1.6573, Acc: 0.4091, F1: 0.3998
+Epoch 9/25
+----------
+train Loss: 1.3253, Acc: 0.5313, F1: 0.5253
+test Loss: 1.6676, Acc: 0.4130, F1: 0.4022
+Epoch 10/25
+----------
+train Loss: 1.2144, Acc: 0.5782, F1: 0.5708
+test Loss: 1.6384, Acc: 0.4182, F1: 0.4138
+Epoch 11/25
+----------
+Epoch 1/20
+----------
+train Loss: 1.1641, Acc: 0.5815, F1: 0.5754
+test Loss: 1.6717, Acc: 0.4234, F1: 0.4167
+Epoch 2/20
+----------
+train Loss: 1.1054, Acc: 0.6245, F1: 0.6206
+test Loss: 1.7081, Acc: 0.4273, F1: 0.4228
+Epoch 3/20
+----------
+Epoch 1/20
+----------
+train Loss: 2.7338, Acc: 0.1591, F1: 0.1500
+test Loss: 2.4960, Acc: 0.1221, F1: 0.0347
+Epoch 2/20
+----------
+train Loss: 2.6753, Acc: 0.1891, F1: 0.1724
+test Loss: 2.3466, Acc: 0.1571, F1: 0.0797
+Epoch 3/20
+----------
+train Loss: 2.4665, Acc: 0.2038, F1: 0.1852
+test Loss: 2.2628, Acc: 0.2130, F1: 0.1424
+Epoch 4/20
+----------
+train Loss: 2.5018, Acc: 0.2027, F1: 0.1833
+test Loss: 2.3623, Acc: 0.1961, F1: 0.1464
+Epoch 5/20
+----------
+train Loss: 2.2381, Acc: 0.2485, F1: 0.2314
+test Loss: 2.1294, Acc: 0.2805, F1: 0.2130
+Epoch 6/20
+----------
+train Loss: 2.0992, Acc: 0.2877, F1: 0.2635
+test Loss: 1.9852, Acc: 0.2805, F1: 0.2223
+Epoch 7/20
+----------
+train Loss: 2.0015, Acc: 0.2834, F1: 0.2687
+test Loss: 1.9627, Acc: 0.3091, F1: 0.2670
+Epoch 8/20
+----------
+train Loss: 1.8757, Acc: 0.3270, F1: 0.3069
+test Loss: 1.8447, Acc: 0.3195, F1: 0.2818
+Epoch 9/20
+----------
+train Loss: 1.7956, Acc: 0.3564, F1: 0.3321
+test Loss: 1.8170, Acc: 0.3442, F1: 0.3192
+Epoch 10/20
+----------
+train Loss: 1.7612, Acc: 0.3749, F1: 0.3551
+test Loss: 1.7982, Acc: 0.3403, F1: 0.3035
+Epoch 11/20
+----------
+train Loss: 1.6984, Acc: 0.3924, F1: 0.3691
+test Loss: 1.7742, Acc: 0.3597, F1: 0.3381
+Epoch 12/20
+----------
+train Loss: 1.6638, Acc: 0.4098, F1: 0.3881
+test Loss: 1.7348, Acc: 0.3779, F1: 0.3540
+Epoch 13/20
+----------
+train Loss: 1.6357, Acc: 0.4218, F1: 0.4013
+test Loss: 1.7154, Acc: 0.3792, F1: 0.3639
+Epoch 14/20
+----------
+train Loss: 1.6165, Acc: 0.4354, F1: 0.4145
+test Loss: 1.7385, Acc: 0.3714, F1: 0.3567
+Epoch 15/20
+----------
+train Loss: 1.5790, Acc: 0.4458, F1: 0.4279
+test Loss: 1.7119, Acc: 0.3987, F1: 0.3858
+Epoch 16/20
+----------
+train Loss: 1.5700, Acc: 0.4572, F1: 0.4402
+test Loss: 1.6962, Acc: 0.4104, F1: 0.3932
+Epoch 17/20
+----------
+train Loss: 1.5464, Acc: 0.4545, F1: 0.4384
+test Loss: 1.6928, Acc: 0.4104, F1: 0.3950
+Epoch 18/20
+----------
+train Loss: 1.5321, Acc: 0.4643, F1: 0.4431
+test Loss: 1.6857, Acc: 0.4156, F1: 0.3981
+Epoch 19/20
+----------
+train Loss: 1.4758, Acc: 0.4801, F1: 0.4574
+test Loss: 1.6838, Acc: 0.4104, F1: 0.3976
+Epoch 20/20
+----------
+train Loss: 1.5176, Acc: 0.4670, F1: 0.4499
+test Loss: 1.6802, Acc: 0.4104, F1: 0.3937
