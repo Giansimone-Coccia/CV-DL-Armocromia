@@ -5,17 +5,17 @@ Questo repository contiene script e notebook utilizzati per l'analisi dell'armoc
 ## Contenuti
 
 1. **Modello per le Stagioni dell'Armocromia (4 classi)**
-   - File: `Fine_tuning_4_Seasons.ipynb`
-   - Descrizione: Questo notebook contiene il modello di machine learning allenato sul dataset `/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN` con immagini etichettate in base alle stagioni dell'armocromia (4 classi).
-   - Modello Allenato: `model_fine_tuning/modello 4 classi/armocromia_4_seasons_resnet50_full.pth`
+   - File: [`Fine_tuning_4_Seasons.ipynb`](Fine_tuning_4_Seasons.ipynb)
+   - Descrizione: Questo notebook contiene il modello di machine learning allenato sul dataset [`/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN`](data/dataset/Armocromia/ARMOCROMIA%202.%20TEST_TRAIN) con immagini etichettate in base alle stagioni dell'armocromia (4 classi).
+   - Modello Allenato: [`model_fine_tuning/modello 4 classi/armocromia_4_seasons_resnet50_full.pth`](model_fine_tuning/modello%204%20classi/armocromia_4_seasons_resnet50_full.pth)
 
 2. **Modello per le Sottocategorie dell'Armocromia (12 classi)**
-   - File: `Fine_tuning_12_Seasons.ipynb`
-   - Descrizione: Questo notebook contiene il modello di machine learning allenato sul dataset `/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN` con immagini etichettate in base alle sottocategorie dell'armocromia (12 classi).
-   - Modello Allenato: `model_fine_tuning/modello 12 classi/armocromia_12_seasons_resnet50_full.pth`
+   - File: [`Fine_tuning_12_Seasons.ipynb`](Fine_tuning_12_Seasons.ipynb)
+   - Descrizione: Questo notebook contiene il modello di machine learning allenato sul dataset [`/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN`](data/dataset/Armocromia/ARMOCROMIA%202.%20TEST_TRAIN) con immagini etichettate in base alle sottocategorie dell'armocromia (12 classi).
+   - Modello Allenato: [`model_fine_tuning/modello 12 classi/armocromia_12_seasons_resnet50_full.pth`](model_fine_tuning/modello%2012%20classi/armocromia_12_seasons_resnet50_full.pth)
 
 3. **Analisi dei Colori dei Volti**
-   - File: `Clustering.ipynb`
+   - File: [`Clustering.ipynb`](Clustering.ipynb)
    - Descrizione: Questo notebook esegue vari processi sull'immagine dei volti utilizzando YOLOv8 per la rilevazione dei volti, segmentazione dei volti rilevati, estrazione dei 3 colori principali per ogni segmento tramite K-Means (3 cluster) e clusterizzazione dei colori dominanti (12 cluster) con successive visualizzazione dei cluster con punti che rappresentano le singole immagini.
 
 ## Dettagli sui Notebook
