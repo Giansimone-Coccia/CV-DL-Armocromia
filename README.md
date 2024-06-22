@@ -20,7 +20,6 @@ Questo repository contiene script e notebook utilizzati per l'analisi dell'armoc
 
 ## Dettagli sui Notebook
 
-- **Requisiti**: Assicurarsi di avere tutti i moduli Python necessari installati, inclusi TensorFlow, OpenCV, e scikit-learn.
 - **Utilizzo**: Eseguire i notebook in sequenza per replicare i risultati dell'analisi. Se non si vuole riutilizzare i dataset forniti, i file di dati di input devono essere specificati nuovamente.
 - **Risultati**: I risultati dell'analisi, inclusi grafici e visualizzazioni, sono generati all'interno dei notebook stessi.
 
