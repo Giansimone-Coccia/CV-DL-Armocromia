@@ -16,15 +16,28 @@ Questo repository contiene script e notebook utilizzati per l'analisi dell'armoc
 
 3. **Analisi dei Colori dei Volti**
    - File: `Clustering.ipynb`
-   - Descrizione: Questo notebook esegue vari processi sull'immagine dei volti utilizzando YOLOv8 per la rilevazione dei volti, segmentazione dei volti rilevati, estrazione dei 3 colori principali per ogni segmento tramite K-Means (3 cluster) e clusterizzazione dei colori dominanti (12 cluster).
+   - Descrizione: Questo notebook esegue vari processi sull'immagine dei volti utilizzando YOLOv8 per la rilevazione dei volti, segmentazione dei volti rilevati, estrazione dei 3 colori principali per ogni segmento tramite K-Means (3 cluster) e clusterizzazione dei colori dominanti (12 cluster) con successive visualizzazione dei cluster con punti che rappresentano le singole immagini.
 
 ## Dettagli sui Notebook
 
 - **Requisiti**: Assicurarsi di avere tutti i moduli Python necessari installati, inclusi TensorFlow, OpenCV, e scikit-learn.
-- **Utilizzo**: Eseguire i notebook in sequenza per replicare i risultati dell'analisi. Se non si vuole riutilizzare i dataset forniti i file di dati di input devono essere specificati nuovamente.
+- **Utilizzo**: Eseguire i notebook in sequenza per replicare i risultati dell'analisi. Se non si vuole riutilizzare i dataset forniti, i file di dati di input devono essere specificati nuovamente.
 - **Risultati**: I risultati dell'analisi, inclusi grafici e visualizzazioni, sono generati all'interno dei notebook stessi.
 
 ## Note Aggiuntive
 
 - Ogni notebook contiene istruzioni dettagliate e commenti nel codice per guidare attraverso il processo di analisi.
 - Assicurarsi di adattare i parametri del modello e dei processi secondo le proprie necessità e specifiche dei dati.
+
+## Requisiti di Installazione
+
+Assicurarsi di installare i seguenti pacchetti prima di eseguire i notebook:
+
+```bash
+%pip uninstall ultralytics
+%pip install ultralytics
+%pip install pyfacer
+%pip install timm
+%pip install scikit-learn
+%pip install Pillow
+%pip install plotly
