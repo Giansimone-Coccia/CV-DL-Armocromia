@@ -1,36 +1,58 @@
-# Repository di Analisi dell'Armocromia
+# 🎨 Armocromia Analysis Repository
 
-Questo repository contiene script e notebook utilizzati per l'analisi dell'armocromia attraverso l'elaborazione di immagini.
+This repository contains scripts and notebooks used for armocromia (color analysis) through image processing.
 
-## Contenuti
+---
 
-1. **Modello per le Stagioni dell'Armocromia (4 classi)**
-   - File: [`Fine_tuning_4_Seasons.ipynb`](Fine_tuning_4_Seasons.ipynb)
-   - Descrizione: Questo notebook contiene il modello di machine learning allenato sul dataset [`/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN`](data/dataset/Armocromia/ARMOCROMIA%202.%20TEST_TRAIN) con immagini etichettate in base alle stagioni dell'armocromia (4 classi).
-   - Modello Allenato: [`model_fine_tuning/modello 4 classi/armocromia_4_seasons_resnet50_full.pth`](model_fine_tuning/modello%204%20classi/armocromia_4_seasons_resnet50_full.pth)
+## 📚 Contents
 
-2. **Modello per le Sottocategorie dell'Armocromia (12 classi)**
-   - File: [`Fine_tuning_12_Seasons.ipynb`](Fine_tuning_12_Seasons.ipynb)
-   - Descrizione: Questo notebook contiene il modello di machine learning allenato sul dataset [`/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN`](data/dataset/Armocromia/ARMOCROMIA%202.%20TEST_TRAIN) con immagini etichettate in base alle sottocategorie dell'armocromia (12 classi).
-   - Modello Allenato: [`model_fine_tuning/modello 12 classi/armocromia_12_seasons_resnet50_full.pth`](model_fine_tuning/modello%2012%20classi/armocromia_12_seasons_resnet50_full.pth)
+### 1. **Seasonal Armocromia Model (4 Classes)**
+- **Notebook**: [`Fine_tuning_4_Seasons.ipynb`](Fine_tuning_4_Seasons.ipynb)  
+- **Description**: This notebook includes the machine learning model trained on the dataset  
+  [`/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN`](data/dataset/Armocromia/ARMOCROMIA%202.%20TEST_TRAIN),  
+  with images labeled according to the 4 seasons of armocromia.
+- **Trained Model**: [`model_fine_tuning/modello 4 classi/armocromia_4_seasons_resnet50_full.pth`](model_fine_tuning/modello%204%20classi/armocromia_4_seasons_resnet50_full.pth)
 
-3. **Analisi dei Colori dei Volti**
-   - File: [`Clustering.ipynb`](Clustering.ipynb)
-   - Descrizione: Questo notebook esegue vari processi sull'immagine dei volti utilizzando YOLOv8 per la rilevazione dei volti, segmentazione dei volti rilevati, estrazione dei 3 colori principali per ogni segmento tramite K-Means (3 cluster) e clusterizzazione dei colori dominanti (12 cluster) con successive visualizzazione dei cluster con punti che rappresentano le singole immagini.
+---
 
-## Dettagli sui Notebook
+### 2. **Subcategory Armocromia Model (12 Classes)**
+- **Notebook**: [`Fine_tuning_12_Seasons.ipynb`](Fine_tuning_12_Seasons.ipynb)  
+- **Description**: This notebook contains the machine learning model trained on the same dataset  
+  [`/data/dataset/Armocromia/ARMOCROMIA 2. TEST_TRAIN`](data/dataset/Armocromia/ARMOCROMIA%202.%20TEST_TRAIN),  
+  but with images labeled into 12 armocromia subcategories.
+- **Trained Model**: [`model_fine_tuning/modello 12 classi/armocromia_12_seasons_resnet50_full.pth`](model_fine_tuning/modello%2012%20classi/armocromia_12_seasons_resnet50_full.pth)
 
-- **Utilizzo**: Eseguire i notebook in sequenza per replicare i risultati dell'analisi. Se non si vuole riutilizzare i dataset forniti, i file di dati di input devono essere specificati nuovamente.
-- **Risultati**: I risultati dell'analisi, inclusi grafici e visualizzazioni, sono generati all'interno dei notebook stessi.
+---
 
-## Note Aggiuntive
+### 3. **Facial Color Analysis**
+- **Notebook**: [`Clustering.ipynb`](Clustering.ipynb)  
+- **Description**: This notebook processes face images using:
+  - YOLOv8 for face detection
+  - Segmentation of detected faces
+  - Extraction of top 3 dominant colors using K-Means (3 clusters)
+  - Color clustering into 12 groups
+  - Visualizations of the clusters with plotted points representing individual images
 
-- Ogni notebook contiene istruzioni dettagliate e commenti nel codice per guidare attraverso il processo di analisi.
-- Assicurarsi di adattare i parametri del modello e dei processi secondo le proprie necessità e specifiche dei dati.
+---
 
-## Requisiti di Installazione
+## 🧪 Notebook Details
 
-Assicurarsi di installare i seguenti pacchetti prima di eseguire i notebook:
+- **Usage**: Run the notebooks sequentially to replicate the analysis results.  
+  If you do not use the provided dataset, make sure to specify your input data paths.
+- **Results**: Analysis results, including charts and visualizations, are generated within each notebook.
+
+---
+
+## 📝 Additional Notes
+
+- Each notebook contains detailed instructions and code comments to guide you through the analysis process.
+- Be sure to adapt model parameters and procedures to your specific needs and data structure.
+
+---
+
+## ⚙️ Installation Requirements
+
+Make sure to install the following packages before running the notebooks:
 
 ```bash
 %pip uninstall ultralytics
